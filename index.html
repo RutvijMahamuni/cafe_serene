@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serene Brews Cafe</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- favicon -->
+    <link rel="icon" href="./media/favicon_coffee2.png" type="image/svg+xml" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Serene Brews</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#banner">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sipSavour.html">Sip & Savour</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./slowdown.html"
+                >Slow down</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Banner - Video Carousel -->
+    <section id="banner" class="hero-banner">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video autoplay muted loop class="d-block w-100">
+              <source src="./videos/video1.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay"></div>
+            <div class="hero-content">
+              <h1 class="hero-title">Serene Brews Cafe</h1>
+              <p class="hero-subtitle">Sip • Savour • Slow Down</p>
+              <p class="hero-tagline">
+                Your urban sanctuary for mindful coffee experiences
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop class="d-block w-100">
+              <source src="./videos/video2.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay"></div>
+            <div class="hero-content">
+              <h1 class="hero-title">Artisanal Coffee</h1>
+              <p class="hero-subtitle">Brewed with Passion</p>
+              <p class="hero-tagline">
+                Experience our handcrafted coffee creations
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop class="d-block w-100">
+              <source src="./videos/video3.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay"></div>
+            <div class="hero-content">
+              <h1 class="hero-title">Mindful Moments</h1>
+              <p class="hero-subtitle">Find Your Peace</p>
+              <p class="hero-tagline">
+                A space designed for relaxation and focus
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop class="d-block w-100">
+              <source src="./videos/video4.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay"></div>
+            <div class="hero-content">
+              <h1 class="hero-title">Seasonal Specials</h1>
+              <p class="hero-subtitle">Fresh & Flavorful</p>
+              <p class="hero-tagline">
+                Discover our rotating selection of seasonal drinks
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop class="d-block w-100">
+              <source src="./videos/video5.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay"></div>
+            <div class="hero-content">
+              <h1 class="hero-title">Community Hub</h1>
+              <p class="hero-subtitle">Connect & Create</p>
+              <p class="hero-tagline">A welcoming space for coffee lovers</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <a href="#about" class="scrolly">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+      <div class="carousel-bottom-curve">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path
+            d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z"
+            fill="#1a1a1a"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section - Spotlight Style -->
+    <section id="about" class="spotlight style1 left parallax-section">
+      <div
+        class="background-image"
+        style="background-image: url(./media/coffee3.jpg)"
+      ></div>
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Our Philosophy</h2>
+              <p>
+                At Serene Brews, we believe in the art of slow coffee. Each cup
+                is carefully crafted with attention to detail and respect for
+                the bean's journey from farm to cup.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p>
+                Our space is designed to be a sanctuary from the hustle of daily
+                life, where you can pause, breathe, and Savour the moment. We
+                provide a soothing counterpoint to the stresses of urban living.
+              </p>
+              <!-- <a href="#menu" class="btn btn-outline-light scrolly">Explore Our Menu</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#menu" class="scrolly">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- Menu Section - Spotlight Style -->
+    <section id="menu" class="spotlight style2 right parallax-section">
+      <div
+        class="background-image"
+        style="background-image: url(./media/outdoor.jpg)"
+      ></div>
+      <div class="content">
+        <h2>Our Mindful Menu</h2>
+        <p>Carefully crafted beverages and bites for a balanced experience</p>
+        <div class="menu-highlights">
+          <div class="menu-item">
+            <h4>Signature Pour Over <span>₹150</span></h4>
+            <p>Single-origin coffee brewed with precision</p>
+          </div>
+          <div class="menu-item">
+            <h4>Zen Chai <span>₹120</span></h4>
+            <p>House-blended spices with organic tea</p>
+          </div>
+          <div class="menu-item">
+            <h4>Avocado Toast <span>₹180</span></h4>
+            <p>On artisan sourdough with microgreens</p>
+          </div>
+        </div>
+      </div>
+      <a href="#brewbar" class="scrolly">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- Brew Bar Section -->
+    <section id="brewbar" class="spotlight style3 left parallax-section">
+      <div
+        class="background-image"
+        style="background-image: url(./media/coffee5.jpg)"
+      ></div>
+      <div class="content">
+        <h2>Our Brew Bar</h2>
+        <p>
+          Experience coffee as an art form with our specialty brewing methods
+        </p>
+        <ul class="brew-methods">
+          <li>V60 Pour Over</li>
+          <li>Aeropress</li>
+          <li>Cold Brew Tower</li>
+          <li>Siphon Brewing</li>
+        </ul>
+        <p>
+          Our baristas are trained in the science and art of extraction to bring
+          out the best in every bean.
+        </p>
+      </div>
+      <a href="#experience" class="scrolly">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-journey">
+      <div class="container">
+        <header class="section-header text-center">
+          <h2>The Serene Experience</h2>
+          <p class="lead">
+            Immerse yourself in our thoughtfully designed spaces
+          </p>
+        </header>
+
+        <div class="experience-track">
+          <!-- Experience 1 -->
+          <div class="experience-card" data-aos="fade-up">
+            <div
+              class="card-image"
+              style="background-image: url('./media/workspace.avif')"
+            >
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="content-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Productive Workspaces</h3>
+              <p>
+                Ergonomic seating, ample power outlets, and high-speed WiFi
+                designed for focused work sessions
+              </p>
+              <div class="feature-list">
+                <span><i class="fas fa-wifi"></i> 500Mbps Fiber</span>
+                <span><i class="fas fa-plug"></i> Power Everywhere</span>
+                <span><i class="fas fa-chair"></i> Ergonomic Seating</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-image"
+              style="background-image: url('./media/reading-nook.avif')"
+            >
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="content-icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <h3>Reading Nooks</h3>
+              <p>
+                Curated library with books on mindfulness, creativity, and
+                personal growth in cozy corners
+              </p>
+              <div class="feature-list">
+                <span><i class="fas fa-couch"></i> Comfy Seating</span>
+                <span
+                  ><i class="fas fa-lightbulb"></i> Adjustable Lighting</span
+                >
+                <span><i class="fas fa-headphones"></i> Quiet Zones</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-image"
+              style="background-image: url('./media/community-table.avif')"
+            >
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="content-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Community Tables</h3>
+              <p>
+                Large shared tables perfect for collaboration, meetups, or
+                making new connections
+              </p>
+              <div class="feature-list">
+                <span><i class="fas fa-chalkboard"></i> Whiteboards</span>
+                <span
+                  ><i class="fas fa-projector"></i> Presentation Screens</span
+                >
+                <span><i class="fas fa-chess"></i> Board Games</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 4 -->
+          <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="card-image"
+              style="
+                background-image: url('./media/garden.jpg');
+                background-position: center bottom 10%;
+                background-size: cover;
+              "
+            >
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="content-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3>Garden Oasis</h3>
+              <p>
+                Our tranquil outdoor space with lush greenery and the soothing
+                sounds of water features
+              </p>
+              <div class="feature-list">
+                <span
+                  ><i class="fas fa-umbrella-beach"></i> Shaded Seating</span
+                >
+                <span><i class="fas fa-fan"></i> Natural Breeze</span>
+                <span><i class="fas fa-water"></i> Fountain Sounds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-cta">
+          <p>
+            Each space is designed with intention to support different moods and
+            activities
+          </p>
+          <a href="#rewards" class="scrolly">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section id="rewards" class="wrapper style2">
+      <div class="container">
+        <div class="rewards-header">
+          <h2>Serene Rewards</h2>
+          <p>
+            Flip each card to discover exclusive benefits for our valued
+            community members
+          </p>
+        </div>
+
+        <div class="rewards-container">
+          <!-- Reward 1 -->
+          <div class="reward-card">
+            <div class="reward-card-front">
+              <div class="reward-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <h3 class="reward-title">Welcome Gift</h3>
+              <p class="reward-desc">Start your journey with us</p>
+            </div>
+            <div class="reward-card-back">
+              <div class="reward-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <h3 class="reward-title">5% Off</h3>
+              <p class="reward-desc">
+                On your first visit when you sign up for our rewards program
+              </p>
+            </div>
+          </div>
+
+          <!-- Reward 2 -->
+          <div class="reward-card">
+            <div class="reward-card-front">
+              <div class="reward-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <h3 class="reward-title">Coffee Lover</h3>
+              <p class="reward-desc">Your dedication deserves rewards</p>
+            </div>
+            <div class="reward-card-back">
+              <div class="reward-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <h3 class="reward-title">Free Drink</h3>
+              <p class="reward-desc">
+                After every 10 purchases, enjoy a specialty drink on us
+              </p>
+            </div>
+          </div>
+
+          <!-- Reward 3 -->
+          <div class="reward-card">
+            <div class="reward-card-front">
+              <div class="reward-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="reward-title">VIP Access</h3>
+              <p class="reward-desc">Exclusive experiences await</p>
+            </div>
+            <div class="reward-card-back">
+              <div class="reward-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="reward-title">Member Events</h3>
+              <p class="reward-desc">
+                Private coffee tastings, brewing workshops, and community
+                gatherings
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            fill="#6b4f3b"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            fill="#6b4f3b"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            fill="#6b4f3b"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Cafe Info -->
+          <div class="footer-column" data-aos="fade-up">
+            <h3 class="footer-logo">Serene Brews</h3>
+            <p class="footer-tagline">
+              Your urban sanctuary for mindful coffee experiences
+            </p>
+            <div class="footer-contact">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Peace Street, Pune
+              </p>
+              <p><i class="fas fa-clock"></i> Open daily 8am - 8pm</p>
+              <p><i class="fas fa-envelope"></i> hello@serenebrews.com</p>
+              <p><i class="fas fa-phone-alt"></i> +91 12345 67890</p>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#banner"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="#about"
+                  ><i class="fas fa-chevron-right"></i> Our Philosophy</a
+                >
+              </li>
+              <li>
+                <a href="#menu"
+                  ><i class="fas fa-chevron-right"></i> The Menu</a
+                >
+              </li>
+              <li>
+                <a href="#brewbar"
+                  ><i class="fas fa-chevron-right"></i> Brew Bar</a
+                >
+              </li>
+              <li>
+                <a href="#experience"
+                  ><i class="fas fa-chevron-right"></i> Experience</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for seasonal specials and events</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/"
+                class="social-icon"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-google-pay"></i>
+            <i class="fab fa-apple-pay"></i>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2025 Serene Brews Cafe. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="./privacy.html">Privacy Policy</a>
+              <a href="./terms.html">Terms of Service</a>
+              <a href="./careers.html">Careers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Top Button -->
+      <a href="#banner" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+      <!-- Floating Coffee Beans -->
+      <div class="footer-bean bean-1"></div>
+      <div class="footer-bean bean-2"></div>
+      <div class="footer-bean bean-3"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollex/0.2.1/jquery.scrollex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrolly/1.0.0/jquery.scrolly.min.js"></script>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Smooth scrolling for all links
+      $(document).on("click", "a.scrolly", function (event) {
+        event.preventDefault();
+        $("html, body").animate(
+          {
+            scrollTop: $($(this).attr("href")).offset().top,
+          },
+          300
+        );
+      });
+
+      // Navbar scroll effect
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $(".navbar").addClass("scrolled");
+        } else {
+          $(".navbar").removeClass("scrolled");
+        }
+      });
+
+      // Parallax effect
+      $(window).on("scroll", function () {
+        var scrollPosition = $(this).scrollTop();
+        $(".hero-banner").css(
+          "background-position",
+          "center " + -(scrollPosition * 0.5) + "px"
+        );
+      });
+    </script>
+    <script>
+      // Initialize carousel with longer interval
+      $(document).ready(function () {
+        $("#heroCarousel").carousel({
+          interval: 5000, // 5 seconds
+          pause: false,
+        });
+
+        // Force videos to play (some browsers require this)
+        $(".carousel").on("slide.bs.carousel", function () {
+          var currentVideo = $(this).find(".active video")[0];
+          var nextVideo = $(this).find(".carousel-item-next video")[0];
+
+          if (currentVideo) currentVideo.pause();
+          if (nextVideo) nextVideo.play();
+        });
+      });
+    </script>
+
+    <script>
+      // Parallax effect for about section
+      $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+        var aboutSection = $("#about");
+        var aboutOffset = aboutSection.offset().top;
+        var windowHeight = $(window).height();
+
+        if (scrollTop > aboutOffset && scrollTop < aboutOffset + windowHeight) {
+          var parallaxPosition = (scrollTop - aboutOffset) * 0.3;
+          $(".parallax-image").css(
+            "transform",
+            "translateY(" + parallaxPosition + "px)"
+          );
+        }
+      });
+    </script>
+
+    <!-- Scroll animation for sections -->
+    <script>
+      // Scroll animation for sections
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check immediately on load
+        checkVisibility();
+
+        // Then check on scroll
+        window.addEventListener("scroll", checkVisibility);
+
+        function checkVisibility() {
+          const triggerBottom = (window.innerHeight / 5) * 4;
+
+          document.querySelectorAll(".spotlight").forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+
+            if (sectionTop < triggerBottom) {
+              section.classList.add("visible");
+            } else {
+            }
+          });
+        }
+      });
+      console.log("Script loaded"); // Should appear in browser console
+    </script>
+
+    <script>
+      // Back to Top Button
+      const backToTopButton = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("active");
+        } else {
+          backToTopButton.classList.remove("active");
+        }
+      });
+
+      // Newsletter Form Submission
+      const newsletterForm = document.querySelector(".newsletter-form");
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const emailInput = newsletterForm.querySelector(
+            'input[type="email"]'
+          );
+          if (emailInput.value) {
+            // Here you would typically send the email to your server
+            alert("Thank you for subscribing to our newsletter!");
+            emailInput.value = "";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

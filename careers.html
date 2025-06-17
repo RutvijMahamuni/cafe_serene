@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers | Serene Brews Cafe</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="./media/favicon_coffee2.png" type="image/svg+xml">
+  
+  <style>
+    :root {
+      --primary-color: #6b4f3b;
+      --secondary-color: #a1714e;
+      --bg-light: #f9f5f0;
+      --text-dark: #333333;
+      --text-light: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+    }
+
+    .careers-hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      background: url('./media/workspace.avif') center/cover no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .careers-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(107, 79, 59, 0.7); */
+      z-index: 0;
+    }
+
+    .careers-hero .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .careers-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .careers-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .careers-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .careers-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .careers-header {
+      background: var(--primary-color);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .careers-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin: 0;
+    }
+
+    .careers-body {
+      padding: 40px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      color: var(--primary-color);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 15px;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(107, 79, 59, 0.1);
+    }
+
+    .benefit-icon {
+      color: var(--secondary-color);
+      font-size: 2.5rem;
+    }
+
+    .culture-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .culture-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .culture-list li {
+      margin-bottom: 10px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .culture-list i {
+      color: var(--secondary-color);
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+
+    .job-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(107, 79, 59, 0.1);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .job-header h3 {
+      color: var(--primary-color);
+      margin-bottom: 0;
+    }
+
+    .job-details {
+      margin-bottom: 20px;
+    }
+
+    .job-details p {
+      margin-bottom: 5px;
+      color: #666;
+    }
+
+    .job-details i {
+      color: var(--secondary-color);
+      margin-right: 8px;
+    }
+
+    .job-description h4 {
+      color: var(--primary-color);
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+
+    .job-description ul {
+      padding-left: 20px;
+    }
+
+    .job-description li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .job-description li::before {
+      content: "•";
+      color: var(--secondary-color);
+      font-size: 1.5em;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    .btn-careers {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn-careers:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(107, 79, 59, 0.3);
+    }
+
+    /* Animation classes */
+    .animate-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .careers-hero h1 {
+        font-size: 3rem;
+      }
+      
+      .careers-body {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .careers-hero {
+        min-height: 40vh;
+        height: 60vh;
+      }
+      
+      .careers-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .careers-hero p {
+        font-size: 1rem;
+      }
+      
+      .careers-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .job-header .badge {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .careers-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .careers-body {
+        padding: 20px;
+      }
+      
+      .form-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">Serene Brews</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#rewards">Rewards</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Careers Hero -->
+  <section class="careers-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Join Our Team</h1>
+        <p>Brew your career with Serene Brews</p>
+        <a href="#openings" class="btn btn-careers btn-lg mt-3">
+          <i class="fas fa-search me-2"></i>View Open Positions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Us -->
+  <section class="why-join-us py-5">
+    <div class="careers-container">
+      <div class="careers-card">
+        <div class="careers-header">
+          <h2 class="text-light"><i class="fas fa-users text-info"></i> Why Work at Serene Brews?</h2>
+        </div>
+        <div class="careers-body" style="background-color: rgba(228, 221, 221, 0.523);">
+          <div class="section-header">
+            <h2>We're more than just a coffee shop - we're a community</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="benefit-card text-center p-4 h-100 animate-section">
+                <div class="benefit-icon mb-3">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <h3>Passionate Team</h3>
+                <p>Work alongside coffee enthusiasts who share your passion for quality and service.</p>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+              <div class="benefit-card text-center p-4 h-100 animate-section">
+                <div class="benefit-icon mb-3">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Growth Opportunities</h3>
+                <p>We invest in our team with training programs and career advancement paths.</p>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+              <div class="benefit-card text-center p-4 h-100 animate-section">
+                <div class="benefit-icon mb-3">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Great Benefits</h3>
+                <p>Competitive pay, flexible schedules, free drinks, and wellness programs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Culture -->
+  <section class="our-culture py-5 bg-light">
+    <div class="careers-container">
+      <div class="careers-card">
+        <div class="careers-header">
+          <h2><i class="fas fa-coffee"></i> Our Culture</h2>
+        </div>
+        <div class="careers-body">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 animate-section">
+              <div class="culture-image">
+                <img src="./media/community-table.avif" alt="Serene Brews Team" class="img-fluid rounded">
+              </div>
+            </div>
+            <div class="col-lg-6 animate-section">
+              <h2 class="mb-4">Our Values</h2>
+              <p>At Serene Brews, we believe that great coffee starts with happy people. Our culture is built on:</p>
+              <ul class="culture-list">
+                <li><i class="fas fa-check-circle"></i> <strong>Respect:</strong> For our team, our customers, and our craft</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Creativity:</strong> We encourage innovation and new ideas</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Balance:</strong> We support work-life harmony</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Community:</strong> We're committed to making a positive impact</li>
+              </ul>
+              <p class="mt-3">Join us in creating meaningful connections, one cup at a time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Openings -->
+  <section id="openings" class="job-openings py-5">
+    <div class="careers-container">
+      <div class="careers-card">
+        <div class="careers-header">
+          <h2><i class="fas fa-briefcase"></i> Current Openings</h2>
+        </div>
+        <div class="careers-body">
+          <div class="section-header">
+            <h2>Find your perfect role with us</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 mb-4 animate-section">
+              <div class="job-card">
+                <div class="job-header">
+                  <h3>Barista</h3>
+                  <span class="badge bg-primary">Full-time/Part-time</span>
+                </div>
+                <div class="job-details">
+                  <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                  <p><i class="fas fa-clock"></i> Flexible shifts available</p>
+                </div>
+                <div class="job-description">
+                  <p>We're looking for passionate individuals to craft exceptional coffee experiences for our guests. No prior experience required - we provide comprehensive training.</p>
+                  <h4>Responsibilities:</h4>
+                  <ul>
+                    <li>Prepare coffee and tea beverages to our standards</li>
+                    <li>Provide excellent customer service</li>
+                    <li>Maintain cleanliness and organization</li>
+                    <li>Learn and share coffee knowledge</li>
+                  </ul>
+                  <a href="#apply" class="btn btn-outline-primary">Apply Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4 animate-section">
+              <div class="job-card">
+                <div class="job-header">
+                  <h3>Shift Supervisor</h3>
+                  <span class="badge bg-primary">Full-time</span>
+                </div>
+                <div class="job-details">
+                  <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                  <p><i class="fas fa-clock"></i> Morning and evening shifts</p>
+                </div>
+                <div class="job-description">
+                  <p>Lead our team in delivering exceptional service while maintaining operational excellence. Ideal for experienced baristas ready for the next step.</p>
+                  <h4>Responsibilities:</h4>
+                  <ul>
+                    <li>Supervise daily cafe operations</li>
+                    <li>Train and mentor team members</li>
+                    <li>Ensure quality control</li>
+                    <li>Handle customer concerns</li>
+                  </ul>
+                  <a href="#apply" class="btn btn-outline-primary">Apply Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4 animate-section">
+              <div class="job-card">
+                <div class="job-header">
+                  <h3>Pastry Chef</h3>
+                  <span class="badge bg-primary">Full-time</span>
+                </div>
+                <div class="job-details">
+                  <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                  <p><i class="fas fa-clock"></i> Early morning shifts</p>
+                </div>
+                <div class="job-description">
+                  <p>Create delicious baked goods that complement our coffee offerings. Bring your creativity to our kitchen!</p>
+                  <h4>Responsibilities:</h4>
+                  <ul>
+                    <li>Prepare daily pastry selection</li>
+                    <li>Develop seasonal specials</li>
+                    <li>Maintain kitchen standards</li>
+                    <li>Manage inventory</li>
+                  </ul>
+                  <a href="#apply" class="btn btn-outline-primary">Apply Now</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4 animate-section">
+              <div class="job-card">
+                <div class="job-header">
+                  <h3>Cafe Manager</h3>
+                  <span class="badge bg-primary">Full-time</span>
+                </div>
+                <div class="job-details">
+                  <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                  <p><i class="fas fa-clock"></i> Flexible schedule</p>
+                </div>
+                <div class="job-description">
+                  <p>Oversee all aspects of cafe operations and lead our team to success. Previous cafe management experience required.</p>
+                  <h4>Responsibilities:</h4>
+                  <ul>
+                    <li>Staff hiring, training, and scheduling</li>
+                    <li>Inventory and ordering</li>
+                    <li>Financial management</li>
+                    <li>Customer experience oversight</li>
+                  </ul>
+                  <a href="#apply" class="btn btn-outline-primary">Apply Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section id="apply" class="application-form py-5" style="background-color: rgba(210, 189, 160, 0.3);">
+    <div class="careers-container">
+      <div class="form-card">
+        <div class="section-header text-center mb-5">
+          <h2>Apply Now</h2>
+          <p class="lead">Start your journey with Serene Brews</p>
+        </div>
+        
+        <form id="careerForm">
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" required>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          
+          <div class="mb-4">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+          
+          <div class="mb-4">
+            <label for="position" class="form-label">Position Applying For</label>
+            <select class="form-select" id="position" required>
+              <option value="" selected disabled>Select a position</option>
+              <option value="Barista">Barista</option>
+              <option value="Shift Supervisor">Shift Supervisor</option>
+              <option value="Pastry Chef">Pastry Chef</option>
+              <option value="Cafe Manager">Cafe Manager</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="mb-4">
+            <label for="experience" class="form-label">Relevant Experience</label>
+            <textarea class="form-control" id="experience" rows="3"></textarea>
+          </div>
+          
+          <div class="mb-4">
+            <label for="resume" class="form-label">Upload Resume</label>
+            <input type="file" class="form-control" id="resume" accept=".pdf,.doc,.docx">
+            <div class="form-text">PDF or Word documents only</div>
+          </div>
+          
+          <div class="mb-4 form-check">
+            <input type="checkbox" class="form-check-input" id="agree" required>
+            <label class="form-check-label" for="agree">I agree to the processing of my data according to the <a href="privacy.html">Privacy Policy</a></label>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="btn btn-careers btn-lg">
+              <i class="fas fa-paper-plane me-2"></i>Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#6b4f3b"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#6b4f3b"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#6b4f3b"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Cafe Info -->
+        <div class="footer-column">
+          <h3 class="footer-logo">Serene Brews</h3>
+          <p class="footer-tagline">Your urban sanctuary for mindful coffee experiences</p>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> 123 Peace Street, Pune</p>
+            <p><i class="fas fa-clock"></i> Open daily 8am - 8pm</p>
+            <p><i class="fas fa-envelope"></i> hello@serenebrews.com</p>
+            <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="./index.html#about"><i class="fas fa-chevron-right"></i> Our Philosophy</a></li>
+            <li><a href="./index.html#menu"><i class="fas fa-chevron-right"></i> The Menu</a></li>
+            <li><a href="./index.html#brewbar"><i class="fas fa-chevron-right"></i> Brew Bar</a></li>
+            <li><a href="./index.html#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
+          </ul>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="footer-column">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter for seasonal specials and events</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-google-pay"></i>
+          <i class="fab fa-apple-pay"></i>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Serene Brews Cafe. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./terms.html">Terms of Service</a>
+            <a href="./careers.html">Careers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+    
+    // Form submission
+    document.getElementById('careerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your application! We will review your information and contact you if there\'s a match with our current openings.');
+      this.reset();
+    });
+    
+    // Scroll animation for sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.animate-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>

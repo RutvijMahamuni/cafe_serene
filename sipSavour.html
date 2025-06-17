@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sip & Savour | Serene Brews Cafe</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./media/favicon_coffee2.png" type="image/svg+xml" />
+
+    <style>
+      :root {
+        --primary-color: #6b4f3b;
+        --secondary-color: #a1714e;
+        --bg-light: #8275656b;
+        --text-dark: #333333;
+        --text-light: #f8f9fa;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+      }
+
+      .sip-hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        background: url("./media/coffee2.jpeg") center/cover no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+
+      .sip-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(107, 79, 59, 0.5);
+        z-index: 0;
+      }
+      .sip-hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(107, 79, 59, 0.5) 0%,
+          rgba(107, 79, 59, 0.3) 100%
+        );
+        z-index: 1;
+      }
+      .sip-hero .hero-content {
+        position: relative;
+        top: 160px;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      .sip-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.541);
+      }
+
+      .sip-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .sip-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .sip-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        margin-bottom: 40px;
+      }
+
+      .sip-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .sip-header h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        margin: 0;
+      }
+
+      .sip-body {
+        padding: 40px;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-header h2 {
+        color: var(--primary-color);
+        font-family: "Playfair Display", serif;
+        margin-bottom: 15px;
+      }
+
+      .menu-category {
+        margin-bottom: 60px;
+      }
+
+      .menu-category h3 {
+        color: var(--primary-color);
+        font-family: "Playfair Display", serif;
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+      }
+
+      .menu-item {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #ddd;
+      }
+
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+
+      .menu-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .menu-item h4 {
+        color: var(--primary-color);
+        margin-bottom: 0;
+        font-size: 1.3rem;
+      }
+
+      .menu-item .price {
+        color: var(--secondary-color);
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .menu-item p {
+        color: #666;
+        margin-bottom: 0;
+      }
+
+      .menu-item .ingredients {
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #888;
+      }
+
+      .highlight-item {
+        background: white;
+        color: #000000;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid rgba(107, 79, 59, 0.1);
+      }
+
+      .highlight-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(107, 79, 59, 0.1);
+      }
+
+      .highlight-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .brew-method {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        height: 100%;
+        text-align: center;
+      }
+
+      .brew-method:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(107, 79, 59, 0.1);
+      }
+
+      .brew-icon {
+        color: var(--secondary-color);
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .brew-method h4 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .seasonal-banner {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 40px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .seasonal-banner h2 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .seasonal-banner p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+      }
+
+      .btn-sip {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+      }
+
+      .btn-sip:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(107, 79, 59, 0.3);
+      }
+
+      /* Animation classes */
+      .animate-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .animate-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .sip-hero h1 {
+          font-size: 3rem;
+        }
+
+        .sip-body {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .sip-hero {
+          min-height: 40vh;
+          height: 60vh;
+        }
+
+        .sip-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .sip-hero p {
+          font-size: 1rem;
+        }
+
+        .sip-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .menu-item-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .sip-hero h1 {
+          font-size: 2rem;
+        }
+
+        .sip-body {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .sip-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .sip-hero p {
+          font-size: 0.9rem;
+        }
+
+        .menu-item h4 {
+          font-size: 1.2rem;
+        }
+
+        .menu-item .price {
+          font-size: 1rem;
+        }
+      }
+
+      .navbar-nav .nav-link,
+      .navbar-brand,
+      .dropdown-menu .dropdown-item {
+        color: rgba(0, 0, 0, 0.573) !important;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-brand:hover,
+      .dropdown-menu .dropdown-item:hover {
+        color: #444 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">Serene Brews</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="sipDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Sip & Savour</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#coffee">Coffee Selection</a>
+                </li>
+                <li><a class="dropdown-item" href="#food">Food Menu</a></li>
+                <li><a class="dropdown-item" href="#brewbar">Brew Bar</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="slowdown.html" class="nav-link">Slow Down</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sip & Savour Hero -->
+    <section
+      class="sip-hero"
+      data-aos="fade"
+      data-aos-duration="600"
+      data-aos-delay="300"
+    >
+      <div class="container">
+        <div class="hero-content">
+          <h1>Sip & Savour</h1>
+          <p>
+            Discover our carefully crafted menu of coffee creations and culinary
+            delights
+          </p>
+          <a href="#coffee" class="btn btn-sip btn-lg mt-3">
+            <i class="fas fa-coffee me-2"></i>Explore Our Menu
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coffee Selection -->
+    <section id="coffee" class="py-5">
+      <div class="sip-container">
+        <div class="sip-card">
+          <div class="sip-header">
+            <h2 class="text-light">
+              <i class="fas fa-mug-hot" style="color: #baa18f"></i> Coffee
+              Selection
+            </h2>
+          </div>
+          <div class="sip-body">
+            <div class="section-header">
+              <h2>Our Coffee Philosophy</h2>
+              <p>
+                We source only the finest specialty grade beans and roast them
+                to perfection to bring out their unique characteristics.
+              </p>
+            </div>
+
+            <div class="menu-category animate-section">
+              <h3>Espresso Classics</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Espresso</h4>
+                      <span class="price">₹120</span>
+                    </div>
+                    <p>A concentrated shot of coffee, rich and full-bodied</p>
+                    <p class="ingredients">Single origin or blend</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Americano</h4>
+                      <span class="price">₹140</span>
+                    </div>
+                    <p>
+                      Espresso diluted with hot water for a smooth, rich cup
+                    </p>
+                    <p class="ingredients">Hot water + espresso</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Cappuccino</h4>
+                      <span class="price">₹160</span>
+                    </div>
+                    <p>Equal parts espresso, steamed milk, and silky foam</p>
+                    <p class="ingredients">Espresso + milk + foam</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Latte</h4>
+                      <span class="price">₹170</span>
+                    </div>
+                    <p>Smooth espresso with velvety steamed milk</p>
+                    <p class="ingredients">Espresso + milk</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Flat White</h4>
+                      <span class="price">₹160</span>
+                    </div>
+                    <p>Ristretto shots with microfoam for a velvety texture</p>
+                    <p class="ingredients">Double ristretto + microfoam</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Mocha</h4>
+                      <span class="price">₹180</span>
+                    </div>
+                    <p>Espresso with chocolate and steamed milk</p>
+                    <p class="ingredients">Espresso + chocolate + milk</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-category animate-section">
+              <h3>Pour Over & Filter Coffee</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>V60 Pour Over</h4>
+                      <span class="price">₹150</span>
+                    </div>
+                    <p>Single origin coffee brewed with precision</p>
+                    <p class="ingredients">
+                      Choose from our rotating single origins
+                    </p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Aeropress</h4>
+                      <span class="price">₹160</span>
+                    </div>
+                    <p>Full-bodied, rich coffee with low acidity</p>
+                    <p class="ingredients">
+                      Choose from our rotating single origins
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Cold Brew</h4>
+                      <span class="price">₹170</span>
+                    </div>
+                    <p>Smooth, less acidic coffee brewed cold for 18 hours</p>
+                    <p class="ingredients">Special cold brew blend</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Nitro Cold Brew</h4>
+                      <span class="price">₹190</span>
+                    </div>
+                    <p>Cold brew infused with nitrogen for a creamy texture</p>
+                    <p class="ingredients">
+                      Special cold brew blend + nitrogen
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-category animate-section">
+              <h3>Specialty Drinks</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Honey Cinnamon Latte</h4>
+                      <span class="price">₹190</span>
+                    </div>
+                    <p>Latte sweetened with honey and spiced with cinnamon</p>
+                    <p class="ingredients">
+                      Espresso + milk + honey + cinnamon
+                    </p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Cardamom Coffee</h4>
+                      <span class="price">₹180</span>
+                    </div>
+                    <p>Traditional Indian-style coffee with cardamom</p>
+                    <p class="ingredients">Filter coffee + cardamom</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Iced Spanish Latte</h4>
+                      <span class="price">₹200</span>
+                    </div>
+                    <p>Espresso with condensed milk over ice</p>
+                    <p class="ingredients">Espresso + condensed milk + ice</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Affogato</h4>
+                      <span class="price">₹220</span>
+                    </div>
+                    <p>Vanilla ice cream "drowned" with a shot of espresso</p>
+                    <p class="ingredients">Espresso + vanilla ice cream</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seasonal Specials -->
+    <section class="py-5" style="background-color: rgba(210, 189, 160, 0.3)">
+      <div class="sip-container">
+        <div class="seasonal-banner animate-section">
+          <h2>Seasonal Specials</h2>
+          <p>
+            Our rotating selection of seasonal drinks celebrates the best
+            flavors of each season. Ask your barista about our current
+            offerings.
+          </p>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="highlight-item">
+                <img
+                  src="./media/pumpkin-spice.avif"
+                  alt="Pumpkin Spice Latte"
+                />
+                <h4>Pumpkin Spice Latte</h4>
+                <p>Our autumn classic with real pumpkin and warm spices</p>
+                <span class="price">₹210</span>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="highlight-item">
+                <img
+                  src="./media/peppermint-mocha.avif"
+                  alt="Peppermint Mocha"
+                />
+                <h4>Peppermint Mocha</h4>
+                <p>Rich chocolate with refreshing peppermint</p>
+                <span class="price">₹220</span>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="highlight-item">
+                <img
+                  src="./media/Iced Lavender Latte.png"
+                  alt="Iced Lavender Latte"
+                />
+                <h4>Iced Lavender Latte</h4>
+                <p>Floral lavender syrup with espresso and milk</p>
+                <span class="price">₹200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Food Menu -->
+    <section id="food" class="py-5">
+      <div class="sip-container">
+        <div class="sip-card">
+          <div class="sip-header">
+            <h2 class="text-light">
+              <i class="fas fa-utensils" style="color: #baa18f"></i> Food Menu
+            </h2>
+          </div>
+          <div class="sip-body">
+            <div class="section-header">
+              <h2>Fresh & Wholesome</h2>
+              <p>
+                Our food menu is designed to complement our coffee offerings,
+                with fresh, locally-sourced ingredients.
+              </p>
+            </div>
+
+            <div class="menu-category animate-section">
+              <h3>Breakfast</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Avocado Toast</h4>
+                      <span class="price">₹180</span>
+                    </div>
+                    <p>
+                      Sourdough toast with smashed avocado, cherry tomatoes, and
+                      microgreens
+                    </p>
+                    <p class="ingredients">Add poached egg +₹50</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Greek Yogurt Bowl</h4>
+                      <span class="price">₹160</span>
+                    </div>
+                    <p>Greek yogurt with granola, honey, and seasonal fruits</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Breakfast Burrito</h4>
+                      <span class="price">₹220</span>
+                    </div>
+                    <p>
+                      Scrambled eggs, black beans, cheese, and salsa in a whole
+                      wheat tortilla
+                    </p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Pancake Stack</h4>
+                      <span class="price">₹190</span>
+                    </div>
+                    <p>Fluffy pancakes with maple syrup and butter</p>
+                    <p class="ingredients">Add berries +₹40, Add nuts +₹30</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-category animate-section">
+              <h3>Lunch</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Quinoa Salad</h4>
+                      <span class="price">₹200</span>
+                    </div>
+                    <p>
+                      Quinoa with roasted vegetables, feta, and lemon-tahini
+                      dressing
+                    </p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Grilled Cheese</h4>
+                      <span class="price">₹180</span>
+                    </div>
+                    <p>
+                      Artisan bread with cheddar and mozzarella, served with
+                      tomato soup
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Chicken Pesto Panini</h4>
+                      <span class="price">₹240</span>
+                    </div>
+                    <p>
+                      Grilled chicken with pesto, mozzarella, and sun-dried
+                      tomatoes
+                    </p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Veggie Wrap</h4>
+                      <span class="price">₹190</span>
+                    </div>
+                    <p>
+                      Hummus, roasted vegetables, and greens in a whole wheat
+                      wrap
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-category animate-section">
+              <h3>Pastries & Desserts</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Croissant</h4>
+                      <span class="price">₹120</span>
+                    </div>
+                    <p>Buttery, flaky classic</p>
+                    <p class="ingredients">Plain, almond, or chocolate</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Blueberry Muffin</h4>
+                      <span class="price">₹110</span>
+                    </div>
+                    <p>Moist muffin packed with fresh blueberries</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Chocolate Chip Cookie</h4>
+                      <span class="price">₹90</span>
+                    </div>
+                    <p>Classic cookie with dark chocolate chunks</p>
+                  </div>
+
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Tiramisu</h4>
+                      <span class="price">₹160</span>
+                    </div>
+                    <p>
+                      Classic Italian dessert with espresso-soaked ladyfingers
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brew Bar -->
+    <section id="brewbar" class="py-5 bg-light">
+      <div class="sip-container">
+        <div class="sip-card">
+          <div class="sip-header">
+            <h2 class="text-light">
+              <i class="fas fa-coffee" style="color: #baa18f"></i> Brew Bar
+            </h2>
+          </div>
+          <div class="sip-body">
+            <div class="section-header">
+              <h2>Experience Coffee as an Art Form</h2>
+              <p>
+                Our Brew Bar showcases different brewing methods, each
+                highlighting unique aspects of our specialty coffees.
+              </p>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-4 animate-section">
+                <div class="brew-method">
+                  <div class="brew-icon">
+                    <i class="fas fa-filter"></i>
+                  </div>
+                  <h4>V60 Pour Over</h4>
+                  <p>
+                    A clean, bright cup that highlights the coffee's delicate
+                    flavors and aromas.
+                  </p>
+                  <p class="price">₹150-₹180</p>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 animate-section">
+                <div class="brew-method">
+                  <div class="brew-icon">
+                    <i class="fas fa-flask"></i>
+                  </div>
+                  <h4>Aeropress</h4>
+                  <p>
+                    Produces a rich, full-bodied cup with low acidity in just
+                    two minutes.
+                  </p>
+                  <p class="price">₹160</p>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4 animate-section">
+                <div class="brew-method">
+                  <div class="brew-icon">
+                    <i class="fas fa-wind"></i>
+                  </div>
+                  <h4>Cold Brew Tower</h4>
+                  <p>
+                    Slow-drip cold brew that's smooth, sweet, and less acidic.
+                  </p>
+                  <p class="price">₹170-₹190</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4 animate-section">
+                <div class="brew-method">
+                  <div class="brew-icon">
+                    <i class="fas fa-mortar-pestle"></i>
+                  </div>
+                  <h4>Turkish Coffee</h4>
+                  <p>
+                    Finely ground coffee simmered in a cezve for a strong,
+                    aromatic experience.
+                  </p>
+                  <p class="price">₹150</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4 animate-section">
+                <div class="brew-method">
+                  <div class="brew-icon">
+                    <i class="fas fa-atom"></i>
+                  </div>
+                  <h4>Siphon Brewing</h4>
+                  <p>
+                    A theatrical method that produces an exceptionally clean and
+                    flavorful cup.
+                  </p>
+                  <p class="price">₹200</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-5 animate-section">
+              <h3>Brew Bar Experience</h3>
+              <p>
+                Join us for our weekly brew bar sessions where our baristas
+                demonstrate these methods and explain the science behind each
+                technique.
+              </p>
+              <a href="./index.html#experience" class="btn btn-sip">
+                <i class="fas fa-calendar-alt me-2"></i>View Events Calendar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            fill="#6b4f3b"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            fill="#6b4f3b"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            fill="#6b4f3b"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Cafe Info -->
+          <div class="footer-column">
+            <h3 class="footer-logo">Serene Brews</h3>
+            <p class="footer-tagline">
+              Your urban sanctuary for mindful coffee experiences
+            </p>
+            <div class="footer-contact">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Peace Street, Pune
+              </p>
+              <p><i class="fas fa-clock"></i> Open daily 8am - 8pm</p>
+              <p><i class="fas fa-envelope"></i> hello@serenebrews.com</p>
+              <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="./index.html#home"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#about"
+                  ><i class="fas fa-chevron-right"></i> Our Philosophy</a
+                >
+              </li>
+              <li>
+                <a href="./assets/page1.html"
+                  ><i class="fas fa-chevron-right"></i> Sip & Savour</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#brewbar"
+                  ><i class="fas fa-chevron-right"></i> Brew Bar</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#experience"
+                  ><i class="fas fa-chevron-right"></i> Experience</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-column">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for seasonal specials and events</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-google-pay"></i>
+            <i class="fab fa-apple-pay"></i>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2025 Serene Brews Cafe. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="./privacy.html">Privacy Policy</a>
+              <a href="./terms.html">Terms of Service</a>
+              <a href="./careers.html">Careers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Top Button -->
+      <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Scroll animation for sections
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".animate-section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+    <script>
+      // Back to Top Button
+      const backToTopButton = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("visible");
+        } else {
+          backToTopButton.classList.remove("visible");
+        }
+      });
+
+      backToTopButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
